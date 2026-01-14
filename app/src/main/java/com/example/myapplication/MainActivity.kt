@@ -61,7 +61,7 @@ fun MyApplicationApp() {
     ) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Greeting(
-                name = "Android",
+                name = currentDestination.label,
                 modifier = Modifier.padding(innerPadding)
             )
         }
@@ -80,7 +80,7 @@ enum class AppDestinations(
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello there $name!",
+        text = "Hello $name!",
         modifier = modifier
     )
 }
@@ -89,6 +89,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        Greeting("Android")
+        Greeting("Home")
     }
 }
